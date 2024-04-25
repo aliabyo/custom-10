@@ -148,7 +148,7 @@ class MyBot(BaseBot):
         try:
             
             await self.highrise.walk_to(Position(0.5, 6.5,1.5, "FrontRight"))
-            await asyncio.sleep(3)
+            await asyncio.sleep(8)
             await self.highrise.chat(" on duty!")
             item = await self.webapi.get_items(item_name="Top Knot") 
             item_id = item.items[0].item_id
@@ -204,15 +204,15 @@ class MyBot(BaseBot):
     async def on_chat(self, user: User, message: str):
         try:
 
-            if message.startswith("vip")and user.username in co_mod:                              
+            if message.lower().startswith("vip")and user.username in co_mod:                              
               await self.highrise.teleport(user.id, Position(15,8,5))
 
 
-            if message.startswith("dj")and user.username in co_mod:                    
+            if message.lower().startswith("dj")and user.username in co_mod:                    
               await self.highrise.teleport(user.id, Position(14.5,17, 3.5)) 
-            if message.startswith("-g"):           
+            if message.lower().startswith("-g"):           
               await self.highrise.teleport(user.id, Position(9,0, 18.5)) 
-            if message.startswith("bunny1")and user.username in co_mod:                              
+            if message.lower().startswith("bunny1")and user.username in co_mod:                              
                         await self.highrise.teleport(user.id, Position(10.5,8,23))
           
             
