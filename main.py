@@ -229,7 +229,7 @@ class MyBot(BaseBot):
                 try:
                     if message.startswith("!here")and user.username in co_mod: 
                         target_username = user_name
-                       if target_username not in ["Alionardo_"]:
+                        if target_username not in ["Alionardo_"]:
                             await self.teleport_user_next_to(target_username, user)
 
                     if message.startswith("!vip")and user.username in co_mod:                              
